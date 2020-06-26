@@ -20,3 +20,5 @@ sudo sh ./VBoxLinuxAdditions.run
 
 ssh-keygen -b 2048 -t rsa -q -N ""
 sudo systemctl enable --now cockpit.socket
+sudo firewall-cmd --permanent --add-service=cockpit
+sudo firewall-cmd --reload
