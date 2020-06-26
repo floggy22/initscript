@@ -16,6 +16,7 @@ wget http://download.virtualbox.org/virtualbox/6.1.8/VBoxGuestAdditions_6.1.8.is
 sudo mount -t iso9660 -o loop VBoxGuestAdditions_6.1.8.iso /media/
 
 cd /media
-sudo sh ./VBoxLinuxAdditions.run --nox11
+sudo sh ./VBoxLinuxAdditions.run
 
 ssh-keygen -b 2048 -t rsa -q -N ""
+sudo systemctl enable --now cockpit.socket
