@@ -3,6 +3,7 @@
 vbv=6.1.10
 
 echo "Update"
+sudo yum clean all
 sudo yum -y update
 
 sudo yum -y install cockpit
