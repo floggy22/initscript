@@ -12,8 +12,8 @@ sudo dnf -y install ansible
 
 echo "VirtualBox"
 sudo dnf -y install gcc kernel-devel kernel-headers dkms make bzip2 perl
-wget http://download.virtualbox.org/virtualbox/6.1.8/VBoxGuestAdditions_6.1.8.iso
-sudo mount -t iso9660 -o loop VBoxGuestAdditions_6.1.8.iso /media/
+wget http://download.virtualbox.org/virtualbox/6.1.10/VBoxGuestAdditions_6.1.10.iso
+sudo mount -t iso9660 -o loop VBoxGuestAdditions_6.1.10.iso /media/
 
 cd /media
 sudo sh ./VBoxLinuxAdditions.run
