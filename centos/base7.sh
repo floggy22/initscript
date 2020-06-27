@@ -2,12 +2,14 @@
 
 vbv=6.1.10
 
+echo "Update"
+sudo yum -y update
+
+sudo yum -y install cockpit
 sudo systemctl enable --now cockpit.socket
 sudo firewall-cmd --permanent --add-service=cockpit
 sudo firewall-cmd --reload
 
-echo "Update"
-sudo yum -y update
 
 echo "Ansible"
 sudo yum -y install epel-release
