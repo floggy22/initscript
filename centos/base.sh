@@ -22,3 +22,9 @@ ssh-keygen -b 2048 -t rsa -q -N ""
 sudo systemctl enable --now cockpit.socket
 sudo firewall-cmd --permanent --add-service=cockpit
 sudo firewall-cmd --reload
+
+cd ~
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker martin
+sudo systemctl start docker
