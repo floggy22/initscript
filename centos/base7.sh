@@ -1,6 +1,6 @@
 #!/bin/sh
 
-vbv=6.1.10
+vbv=6.1.12
 
 echo "Update"
 sudo yum clean all
