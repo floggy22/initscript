@@ -4,7 +4,7 @@ zone "labor.local" IN {
     allow-update {none; };
 };
 
-zone "10.0.2.in-addr.arpa" IN {
+zone "2.0.10.in-addr.arpa" IN {
     type master;
     file "reverse.labor";
     allow-update {none; };
