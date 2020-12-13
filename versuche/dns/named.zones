@@ -1,11 +1,15 @@
 zone "labor.local" IN {
     type master;
     file "forward.labor";
-    allow-update {none; };
+    // allow-update {none; };
+    allow-update { key "rndc-key"; };
+    notify yes;
 };
 
 zone "2.0.10.in-addr.arpa" IN {
     type master;
     file "reverse.labor";
-    allow-update {none; };
+    //allow-update {none; };
+    allow-update { key "rndc-key"; };
+    notify yes;
 };
