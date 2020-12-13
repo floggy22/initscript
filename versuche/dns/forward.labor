@@ -1,14 +1,15 @@
 $TTL 86400
 @ IN SOA primary.labor.local. root.labor.local. (
-2011071001 ;Serial
-3600 ;Refresh
-1800 ;Retry
-604800 ;Expire
-86400 ;Minimum TTL
+    2011071001 ;Serial
+    3600 ;Refresh
+    1800 ;Retry
+    604800 ;Expire
+    86400 ;Minimum TTL
 )
+
 @ IN NS primary.labor.local.
 @ IN A 10.0.2.222
 
 primary IN A 10.0.2.222
 client IN A 10.0.2.20
-client IN A 10.0.2.21
+client1 IN A 10.0.2.30
