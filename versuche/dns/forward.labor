@@ -1,5 +1,5 @@
 $TTL 86400
-@ IN SOA primary.labor.local. root.labor.local. (
+@ IN SOA server.labor.lan. root.labor.lan. (
     2011071001 ;Serial
     3600 ;Refresh
     1800 ;Retry
@@ -7,9 +7,9 @@ $TTL 86400
     86400 ;Minimum TTL
 )
 
-@ IN NS primary.labor.local.
-@ IN A 10.0.2.222
+@ IN NS server.labor.lan.
+@ IN A 10.0.2.200
 
-primary IN A 10.0.2.222
-client IN A 10.0.2.20
-client1 IN A 10.0.2.30
+server IN A 10.0.2.200
+client IN A 10.0.2.55
+client1 IN A 10.0.2.60
