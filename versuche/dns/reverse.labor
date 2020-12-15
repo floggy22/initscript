@@ -1,16 +1,16 @@
 $TTL 86400
-@ IN SOA pimary.in-addr.arpa root.labor.local. (
+@ IN SOA server.in-addr.arpa root.labor.lan. (
     2011071001 ;Serial
     3600 ;Refresh
     1800 ;Retry
     604800 ;Expire
     86400 ;Minimum TTL
 )
-@ IN NS primary.labor.local.
+@ IN NS server.labor.lan.
 
-@ IN PTR labor.local.
-primary IN A 10.0.2.222
+@ IN PTR labor.lan.
+server IN A 10.0.2.200
 
-222 IN PTR primary.labor.local.
-20 IN PTR client.labor.local.
-30 IN PTR client1.labor.local.
+200 IN PTR server.labor.lan.
+55  IN PTR client.labor.lan. 
+60  IN PTR client1.labor.lan.
