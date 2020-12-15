@@ -1,5 +1,5 @@
 $TTL 86400
-@ IN SOA 2.0.10.in-addr.arpa root.labor.local. (
+@ IN SOA pimary.in-addr.arpa root.labor.local. (
     2011071001 ;Serial
     3600 ;Refresh
     1800 ;Retry
