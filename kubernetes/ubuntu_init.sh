@@ -1,4 +1,4 @@
-#!/bin/bin
+#!/bin/bash
 
 echo "run as root!!"
 
