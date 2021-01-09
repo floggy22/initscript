@@ -14,5 +14,5 @@ sudo cp /vagrant/.p10k.zsh ~/.
 sudo cp /vagrant/.zshrc ~/.
 sudo chown $(id -u):$(id -g) ~/.p10k.zsh
 sudo chown $(id -u):$(id -g) ~/.zshrc
-echo "if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi" >> ~/.zshrc ##only if config deployed
-#echo "source <(kubectl completion zsh)" >> ~/.zshrc
+#echo "if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi" >> ~/.zshrc ##only if config deployed
+echo "source <(kubectl completion zsh)" >> ~/.zshrc
