@@ -18,7 +18,7 @@ sudo cp -i /etc/kubernetes/admin.conf /root/.kube/config
 
 sudo mkdir -p /home/vagrant/.kube
 sudo cp -i /etc/kubernetes/admin.conf /home/vagrant/.kube/config
-sudo chown vagrant:vagrant $HOME/.kube/config
+sudo chown vagrant:vagrant /home/vagrant/.kube/config
 
 echo "[TASK 6] Install HELM"
 snap install helm --classic
