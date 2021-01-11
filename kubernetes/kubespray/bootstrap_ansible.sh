@@ -4,6 +4,7 @@ echo "[TASK A1] Make ssh key"
 ssh-keygen -b 2048 -t rsa -q -N "" -f ~/.ssh/id_rsa
 
 echo "[TASK A2] Distribute ssh key"
+apt update
 apt install -y sshpass
 ssh-keyscan -H ansible >> ~/.ssh/known_hosts
 ssh-keyscan -H node1 >> ~/.ssh/known_hosts
@@ -28,6 +29,7 @@ pip3 install -r requirements.txt
 echo "[TASK A%] Create install"
 cd ~
 cd kubespray
+git checkout release-2.13
 cp -rfp inventory/sample inventory/mycluster
 declare -a IPS=(172.16.16.201 172.16.16.202 172.16.16.203 172.16.16.204)
 CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}

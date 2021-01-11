@@ -19,5 +19,5 @@ cat >>/etc/hosts<<EOF
 
 EOF
 
-echo "[TASK 5] Update"
-apt update
+#echo "[TASK 5] Update"
+#apt update
