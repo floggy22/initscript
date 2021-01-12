@@ -10,10 +10,10 @@ sudo rndc-confgen -a
 sudo chgrp named /etc/rndc.key
 sudo chmod g+r /etc/rndc.key
 
-sudo cp /vagrant/named.conf /etc/named.conf
-sudo cp /vagrant/named.zones /etc/named.zones
+sudo cp /vagrant/dns/named.conf /etc/named.conf
+sudo cp /vagrant/dns/named.zones /etc/named/named.zones
 
-sudo cp /vagrant/foward.labor /var/named/foward.labor
-sudo cp /vagrant/reverse /var/named/reverse.labor
+sudo cp /vagrant/dns/foward.labor /var/named/foward.labor
+sudo cp /vagrant/dns/reverse.labor /var/named/reverse.labor
 sudo systemctl restart named.service
 dig -x server.labor.lan
