@@ -1,7 +1,7 @@
 DNS  - Test  
 ----------------  
 https://linuxconfig.org/configure-rndc-key-for-bind-dns-server-on-centos-7
-
+https://docs.oracle.com/cd/E55956_01/doc.11123/administrator_guide/content/admin_dns_wildcards.html
 
 
 dnf install bind bind-utils -y  
