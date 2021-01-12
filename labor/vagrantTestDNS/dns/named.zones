@@ -1,0 +1,13 @@
+zone "labor.lan" IN {
+    type master;
+    file "forward.labor";
+    allow-update { key rndc-key;  };
+    notify yes;
+};
+
+zone "16.16.172.in-addr.arpa" IN {
+    type master;
+    file "reverse.labor";
+    allow-update { key rndc-key; };
+    notify yes;
+};
