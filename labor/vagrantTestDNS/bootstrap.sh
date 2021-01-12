@@ -15,3 +15,5 @@ sudo cp /vagrant/named.zones /etc/named.zones
 
 sudo cp /vagrant/foward.labor /var/named/foward.labor
 sudo cp /vagrant/reverse /var/named/reverse.labor
+sudo systemctl restart named.service
+dig -x server.labor.lan
