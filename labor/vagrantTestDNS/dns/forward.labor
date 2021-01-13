@@ -11,5 +11,3 @@ $TTL 86400
 @ IN A 172.16.16.5
 
 server IN A 172.16.16.5
-// client IN A 10.0.2.55
-// client1 IN A 10.0.2.60

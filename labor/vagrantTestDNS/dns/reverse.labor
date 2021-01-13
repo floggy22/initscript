@@ -12,5 +12,3 @@ $TTL 86400
 server IN A 172.16.16.5
 
 5 IN PTR server.labor.lan.
-//55  IN PTR client.labor.lan. 
-//60  IN PTR client1.labor.lan.
