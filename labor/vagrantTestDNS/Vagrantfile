@@ -10,12 +10,40 @@ Vagrant.configure("2") do |config|
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
-  # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "generic/fedora33"
-  #config.vm.provision "shell", path: "docker.sh"
-  config.vm.hostname = "server.labor.lan"
-  config.vm.synced_folder "./", "/vagrant"
+  config.vm.define "server" do |node|
+    node.vm.box = "ubuntu/focal64"
+    node.vm.box_check_update = false
+    node.vm.hostname = "server.labor.work"
+    node.vm.network "private_network", ip: "172.16.16.5"
+    node.vm.synced_folder "./", "/vagrant"
+  
+    node.vm.provider "virtualbox" do |v|
+      #v.name = ""
+      v.memory = 4096
+      v.cpus = 2
+    end
+    #node.vm.provision "shell", path: "bootstrap_ansible.sh"
+    node.vm.provision "shell", inline: <<-SHELL
+      apt update
+      apt install -y bind9
+    SHELL
+  end
+
+  config.vm.define "client1" do |node|
+    node.vm.box = "ubuntu/focal64"
+    node.vm.box_check_update = false
+    node.vm.hostname = "client1.labor.work"
+    node.vm.network "private_network", ip: "172.16.16.6"
+    node.vm.synced_folder "./", "/vagrant"
+  
+    node.vm.provider "virtualbox" do |v|
+      #v.name = ""
+      v.memory = 4096
+      v.cpus = 2
+    end
+    #node.vm.provision "shell", path: "bootstrap_ansible.sh"
+  end
+
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -31,7 +59,7 @@ Vagrant.configure("2") do |config|
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
-  config.vm.network "private_network", ip: "172.16.16.5"
+  #config.vm.network "private_network", ip: "172.16.16.5"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -48,17 +76,17 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  config.vm.provider "virtualbox" do |vb|
+  #config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
-    vb.gui = false
+   # vb.gui = false
       # Customize the avmount of memory on the VM:
-    vb.memory = "4096"
-    vb.cpus = "4"
+   # vb.memory = "4096"
+   # vb.cpus = "4"
     #vb.name = "Gui Box1"
     #vb.customize ["modifyvm", :id, "--vram", "32"]
     #vb.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
     #vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
-  end
+  #end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
@@ -66,8 +94,13 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
+   config.vm.provision "shell", inline: <<-SHELL
+     apt update
+     apt upgrade -y
+     sed -i 's/^PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config
+     echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
+     systemctl reload sshd
+     echo -e "kubeadmin\nkubeadmin" | passwd root >/dev/null 2>&1
+     #apt-get install -y apache2
+   SHELL
 end
