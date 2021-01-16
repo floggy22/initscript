@@ -8,7 +8,6 @@ $TTL 86400
 )
 
 @ IN NS server.labor.lan.
-
 @ IN A 172.16.16.5
 
 server IN A 172.16.16.5
