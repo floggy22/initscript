@@ -27,11 +27,12 @@ Vagrant.configure("2") do |config|
       apt update
       apt install -y bind9
       cp /vagrant/dns/* /etc/bind/.
+      systemctl restart bind9
     SHELL
   end
 
   config.vm.define "client1" do |node|
-    node.vm.box = "ubuntu/focal64"
+    node.vm.box = "ubuntu/groovy64"
     node.vm.box_check_update = false
     node.vm.hostname = "client1.labor.lan"
     node.vm.network "private_network", ip: "172.16.16.6"
