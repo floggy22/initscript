@@ -1,0 +1,4 @@
+      
+      nameservers:
+        addresses: [172.16.16.5]
+        search: [labor.lan]
