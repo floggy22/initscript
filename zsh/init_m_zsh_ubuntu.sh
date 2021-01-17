@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SPATH=`dirname $0`
+SPATH=`dirname "$0"`
 
 echo "Install zsh"
 sudo apt update
