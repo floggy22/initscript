@@ -1,5 +1,18 @@
 #!/bin/bash
 
+#only root
+
+ID=$(id -u)
+
+if [ "$ID" -ne 0 ]; then
+        echo "Runs as root or sudo"
+        echo "$ID"
+        exit 1
+else
+        echo "OK"
+        echo "$ID"
+fi
+
 
 echo "Add DNS settings - ROOT"
 
