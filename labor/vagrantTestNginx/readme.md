@@ -16,6 +16,22 @@ push
 docker push gitlab.labor.lan:5050/root/test2/[name]
 
 
+Gitlab certifactes to config/ssl. name same as the domain. before start to prevent letencrypt
+CA to config/trusted-certs
+#Create key
+openssl genrsa -out gitlab.labor.lan.key 2048
+
+#Create certificate (for wildcard *.labor.lan as fqdn)
+openssl req -new -key gitlab.labor.lan.key -out gitlab.labor.lan.csr
+
+#Sign certificate with ca
+openssl x509 -req -in gitlab.labor.lan.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out gitlab.labor.lan.crt
+
+
+install CA:
+sudo cp ca.crt /usr/local/share/ca-certificates/ca.crt
+sudo update-ca-certificates
+
 Sources: 
 install ca:
 https://askubuntu.com/questions/73287/how-do-i-install-a-root-certificate
