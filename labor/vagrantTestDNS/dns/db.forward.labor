@@ -1,6 +1,6 @@
 $TTL 86400
 @ IN SOA server.labor.lan. root.labor.lan (
-    2440 ;Serial
+    5 ;Serial
     3600 ;Refresh
     1800 ;Retry
     604800 ;Expire
@@ -11,6 +11,12 @@ $TTL 86400
 @ IN A 172.16.16.5
 
 server IN A 172.16.16.5
+desktop IN A 172.16.16.10
+nginx IN A 172.16.16.15
+www IN CNAME nginx
+test7777 IN CNAME nginx
+test7778 IN CNAME nginx
+gitlab IN CNAME nginx
 client1 IN A 172.16.16.6
 client2 IN A 172.16.16.7
 *.api IN A 172.16.16.6

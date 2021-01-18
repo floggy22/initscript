@@ -1,6 +1,6 @@
 $TTL 86400
 @ IN SOA server.in-addr.arpa root.labor.lan (
-    2023002 ;Serial
+    3 ;Serial
     3600 ;Refresh
     1800 ;Retry
     604800 ;Expire
@@ -14,3 +14,5 @@ server IN A 172.16.16.5
 5 IN PTR server.labor.lan.
 6 IN PTR client1.labor.lan.
 7 IN PTR client2.labor.lan.
+10 IN PTR desktop.labor.lan.
+15 IN PTR nginx.labor.lan.
