@@ -1,0 +1,19 @@
+web:
+  image: 'gitlab/gitlab-ce:latest'
+  restart: always
+  hostname: 'gitlab.labor.lan'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      external_url 'https://gitlab.labor.lan'
+      gitlab_rails['gitlab_shell_ssh_port'] = 2222
+      registry_external_url 'https://gitlab.labor.lan:5050'
+      # Add any other gitlab.rb configuration here, each on its own line
+  ports:
+    - '8080:80'
+    - '4430:443'
+    - '2222:22'
+    - '5050:5050'
+  volumes:
+    - '/root/gitlab/config:/etc/gitlab'
+    - '/root/gitlab/logs:/var/log/gitlab'
+    - '/root/gitlab/data:/var/opt/gitlab'
