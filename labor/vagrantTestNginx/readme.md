@@ -13,4 +13,6 @@ https://gist.github.com/Soarez/9688998
 https://dev.to/benjaminblack/obtaining-an-elliptic-curve-dsa-certificate-with-lets-encrypt-51bc
 https://blog.heckel.io/2018/08/05/issuing-lets-encrypt-certificates-for-65000-internal-servers/
 
+Testtool:
+https://github.com/drwetter/testssl.sh
 
