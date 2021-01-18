@@ -7,6 +7,15 @@ openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 Test Docker nginx:
 docker run --name some-nginx1 -v /root/web:/usr/share/nginx/html:ro --rm -p 7778:80 nginx
 
+own docker registry:
+Tag or build
+docker build -t gitlab.labor.lan:5050/root/test2 .
+docker tag [image_name] gitlab.labor.lan:5050/root/test2/[name]
+
+push
+docker push gitlab.labor.lan:5050/root/test2/[name]
+
+
 Sources: 
 install ca:
 https://askubuntu.com/questions/73287/how-do-i-install-a-root-certificate
