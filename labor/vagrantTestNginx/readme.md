@@ -32,6 +32,9 @@ install CA:
 sudo cp ca.crt /usr/local/share/ca-certificates/ca.crt
 sudo update-ca-certificates
 
+
+
+
 Sources: 
 install ca:
 https://askubuntu.com/questions/73287/how-do-i-install-a-root-certificate
