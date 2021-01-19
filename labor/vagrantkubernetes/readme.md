@@ -15,3 +15,17 @@ or add own ca to the cluster
 /usr/local/share/ca-certificates/
 update-ca-certificates
 reboot
+
+create secret from type docker-registy
+kubectl create secret docker-registry gitlab --docker-server=https://gitlab.labor.lan:5050 --docker-username=[user] --docker-password=[password] --docker-email=user@server.labor.lan
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: private-reg
+spec:
+  containers:
+  - name: private-reg-container
+    image: gitlab.labor.lan:5050/root/test2/nginx
+  imagePullSecrets:
+  - name: gitlab
