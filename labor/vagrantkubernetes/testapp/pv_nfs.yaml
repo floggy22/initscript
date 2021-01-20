@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: myapp-data
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+    #- ReadWriteMany
+  storageClassName: ""
+  mountOptions:
+    - hard
+    - nfsver=4.0
+  nfs:
+    path: /var/nfs/general
+    server: nfsserver.labor.lan
