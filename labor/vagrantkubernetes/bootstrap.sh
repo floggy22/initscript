@@ -69,6 +69,17 @@ echo "KUBELET_EXTRA_ARGS=--node-ip=$ip4" >> /etc/default/kubelet
 echo "[TASK 12] Generate private key"
 ssh-keygen -b 2048 -t rsa -q -N "" -f ~/.ssh/id_rsa
 
+echo "[TASK 13] NFS Client"
+apt update
+apt install -y nfs-common
+
+echo "[TASK 14] root zsh"
+cd ~
+cd zsh
+bash init_m_zsh_ubuntu.sh
+
+
+
 #echo "[TASK 10] Update /etc/hosts file"
 #cat >>/etc/hosts<<EOF
 #172.16.16.110   kmaster.labor.lan     kmaster
