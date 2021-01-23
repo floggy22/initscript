@@ -66,6 +66,9 @@ echo "$ip4"
 echo "KUBELET_EXTRA_ARGS=--node-ip=$ip4" >> /etc/default/kubelet
 
 
+echo "[TASK 12] Generate private key"
+ssh-keygen -b 2048 -t rsa -q -N "" -f ~/.ssh/id_rsa
+
 #echo "[TASK 10] Update /etc/hosts file"
 #cat >>/etc/hosts<<EOF
 #172.16.16.110   kmaster.labor.lan     kmaster
