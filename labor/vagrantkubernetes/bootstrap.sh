@@ -58,3 +58,17 @@ cd ~
 git clone https://github.com/floggy22/initscript.git
 cd ~
 bash initscript/clientdns/add_dns_ubuntu.sh
+
+echo "[TASK 11] Add private ip kubeadm"
+#enp0s8
+ip4=$(ip -o -4 addr show enp0s8 | awk '{print $4}' | cut -d/ -f1)
+echo "$ip4"
+echo "KUBELET_EXTRA_ARGS=--node-ip=$ip4" >> /etc/default/kubelet
+
+
+#echo "[TASK 10] Update /etc/hosts file"
+#cat >>/etc/hosts<<EOF
+#172.16.16.110   kmaster.labor.lan     kmaster
+#172.16.16.111   kworker1.labor.lan    kworker1
+#172.16.16.112   kworker2.labor.lan    kworker2
+#EOF
