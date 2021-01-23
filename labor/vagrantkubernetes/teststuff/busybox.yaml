@@ -21,3 +21,16 @@ spec:
     args:
     - sleep
     - "1000"
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubunutu-sleeper
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu
+    args:
+    - sleep
+    - "60000"
