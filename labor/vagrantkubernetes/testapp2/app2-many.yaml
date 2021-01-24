@@ -1,0 +1,110 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: nginx
+  name: nginx-deploy-blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nginx-blue
+  template:
+    metadata:
+      labels:
+        run: nginx-blue
+    spec:
+      volumes:
+      - name: webdata
+        emptyDir: {}
+      initContainers:
+      - name: web-content
+        image: ubuntu
+        volumeMounts:
+        - name: webdata
+          mountPath: "/webdata"
+        command: 
+          - "/bin/bash"
+        args:
+          - "-c" 
+          - "apt update && apt install -y git && cd /webdata && git clone https://github.com/floggy22/otest.git && cp otest/webtest/index_blue.html index.html && rm otest -rf"
+      containers:
+      - image: nginx
+        name: nginx
+        volumeMounts:
+        - name: webdata
+          mountPath: "/usr/share/nginx/html"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: nginx
+  name: nginx-deploy-green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nginx-green
+  template:
+    metadata:
+      labels:
+        run: nginx-green
+    spec:
+      volumes:
+      - name: webdata
+        emptyDir: {}
+      initContainers:
+      - name: web-content
+        image: ubuntu
+        volumeMounts:
+        - name: webdata
+          mountPath: "/webdata"
+        command: 
+          - "/bin/bash"
+        args:
+          - "-c" 
+          - "apt update && apt install -y git && cd /webdata && git clone https://github.com/floggy22/otest.git && cp otest/webtest/index_green.html index.html && rm otest -rf"
+      containers:
+      - image: nginx
+        name: nginx
+        volumeMounts:
+        - name: webdata
+          mountPath: "/usr/share/nginx/html"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: nginx
+  name: nginx-deploy-red
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nginx-red
+  template:
+    metadata:
+      labels:
+        run: nginx-red
+    spec:
+      volumes:
+      - name: webdata
+        emptyDir: {}
+      initContainers:
+      - name: web-content
+        image: ubuntu
+        volumeMounts:
+        - name: webdata
+          mountPath: "/webdata"
+        command: 
+          - "/bin/bash"
+        args:
+          - "-c" 
+          - "apt update && apt install -y git && cd /webdata && git clone https://github.com/floggy22/otest.git && cp otest/webtest/index_red.html index.html && rm otest -rf"
+      containers:
+      - image: nginx
+        name: nginx
+        volumeMounts:
+        - name: webdata
+          mountPath: "/usr/share/nginx/html"
