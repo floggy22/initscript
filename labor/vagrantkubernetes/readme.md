@@ -29,3 +29,6 @@ spec:
     image: gitlab.labor.lan:5050/root/test2/nginx
   imagePullSecrets:
   - name: gitlab
+
+  NFS - Storage:
+  https://www.padok.fr/en/blog/readwritemany-nfs-kubernetes
