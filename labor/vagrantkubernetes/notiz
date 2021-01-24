@@ -1,0 +1,3 @@
+kubectl get pods -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx --watch
+
+sed -i 's/^hostNetwork: false.*/hostNetwork: true/' /vagrant/ingress-nginx.yaml

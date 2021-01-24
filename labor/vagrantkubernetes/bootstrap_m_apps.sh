@@ -21,3 +21,21 @@ data:
       addresses:
       - 172.16.16.80-172.16.16.99
 EOF
+
+echo "AP2 - Ingress Nginx (helm)"
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx                                                          
+helm repo update
+helm show values ingress-nginx/ingress-nginx > /tmp/ingress-nginx.yaml
+
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ingress-nginx
+EOF
+
+echo "Change values file /tmp/ingress-nginx.yaml"
+echo "  hostNetwork: true"
+echo " hostPort:  enabled: true"
+echo " kind: DaemonSet"
+echo "helm install myingress ingress-nginx/ingress-nginx -n ingress-nginx --values /tmp/ingress-nginx.yaml"
