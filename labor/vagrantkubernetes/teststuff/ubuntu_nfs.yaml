@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ubunutu-nfs
+  labels:
+    app: nfstest1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nfstest1
+  template:
+    metadata:
+      labels:
+        app: nfstest1
+    spec:
+      containers:
+      - name: ubuntu
+        image: ubuntu
+        args:
+          - sleep
+          - "60000"
+        ports:
+        - containerPort: 8888
+        volumeMounts:
+        - name: src
+          mountPath: /usr/local/src
+      volumes:
+      - name: src
+        persistentVolumeClaim:
+          claimName: src
