@@ -30,7 +30,11 @@ spec:
   imagePullSecrets:
   - name: gitlab
 
-  NFS - Storage:
+
+NFS - Storage:
   https://www.padok.fr/en/blog/readwritemany-nfs-kubernetes
   https://www.alibabacloud.com/blog/kubernetes-volume-basics-emptydir-and-persistentvolume_594834
-  
+
+
+Join Cluster:
+https://www.serverlab.ca/tutorials/containers/kubernetes/how-to-add-workers-to-kubernetes-clusters/
