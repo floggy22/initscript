@@ -75,8 +75,7 @@ apt install -y nfs-common
 
 echo "[TASK 14] root zsh"
 cd ~
-cd zsh
-bash init_m_zsh_ubuntu.sh
+bash initscript/zsh/init_m_zsh_ubuntu.sh
 
 
 
