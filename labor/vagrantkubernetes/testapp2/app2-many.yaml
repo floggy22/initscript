@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: nginx
+    run: nginx-blue
   name: nginx-deploy-blue
 spec:
   replicas: 1
@@ -39,7 +39,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: nginx
+    run: nginx-green
   name: nginx-deploy-green
 spec:
   replicas: 1
@@ -76,7 +76,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: nginx
+    run: nginx-red
   name: nginx-deploy-red
 spec:
   replicas: 1
