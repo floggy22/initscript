@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-nginx-gold
+spec:
+  tls:
+  - hosts:
+      - gold.web.labor.lan
+    secretName: goldsecret-tls
+  rules:
+  - host: gold.web.labor.lan
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-gold
+            port: 
+              number: 80
