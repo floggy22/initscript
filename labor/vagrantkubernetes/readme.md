@@ -38,3 +38,6 @@ NFS - Storage:
 
 Join Cluster:
 https://www.serverlab.ca/tutorials/containers/kubernetes/how-to-add-workers-to-kubernetes-clusters/
+
+Add master to schedule:
+kubectl taint node kmaster node-role.kubernetes.io/master:NoSchedule-
