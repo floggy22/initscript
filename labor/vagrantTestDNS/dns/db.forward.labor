@@ -1,6 +1,6 @@
 $TTL 86400
 @ IN SOA server.labor.lan. root.labor.lan (
-    8 ;Serial
+    9 ;Serial
     3600 ;Refresh
     1800 ;Retry
     604800 ;Expire
@@ -24,3 +24,4 @@ kmaster IN A 172.16.16.110
 kworker1 IN A 172.16.16.111
 kworker2 IN A 172.16.16.112
 nfsserver IN A 172.16.16.20
+*.web IN A 172.16.16.82
