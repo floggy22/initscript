@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "ubuntu/focal64"
+  config.vm.box = "centos/8"
   #config.vm.provision "shell", path: "initgui.sh"
 
   # Create a forwarded port mapping which allows access to a specific port
@@ -49,9 +49,9 @@ Vagrant.configure("2") do |config|
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
       # Customize the amount of memory on the VM:
-    vb.memory = "4096"
-    vb.cpus = "4"
-    vb.name = "Gui Box"
+    vb.memory = 1024*4
+    vb.cpus = 4
+    #vb.name = "Gui Box"
     vb.customize ["modifyvm", :id, "--vram", "32"]
     vb.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
     vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
