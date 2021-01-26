@@ -1,6 +1,6 @@
 $TTL 86400
 @ IN SOA server.in-addr.arpa root.labor.lan (
-    8 ;Serial
+    11 ;Serial
     3600 ;Refresh
     1800 ;Retry
     604800 ;Expire
@@ -20,3 +20,17 @@ server IN A 172.16.16.5
 111 IN PTR kworker1.labor.lan.
 112 IN PTR kworker2.labor.lan.
 20 IN PTR nfsserver.labor.lan.
+82 IN PTR web.labor.lan.
+
+;Openshift stuff
+40 IN PTR okd4-bootstrap.labor.lan.
+41 IN PTR okd4-master1.labor.lan.
+42 IN PTR okd4-master2.labor.lan.
+43 IN PTR okd4-master3.labor.lan.
+44 IN PTR okd4-worker1.labor.lan.
+45 IN PTR okd4-worker2.labor.lan. 
+50 IN PTR okd4-services.labor.lan.
+1  IN PTR okd4-pfsense.labor.lan.
+50 IN PTR api.labor.lan.
+50 IN PTR api-int.labor.lan.
+50 IN PTR apps.labor.lan.
