@@ -23,3 +23,4 @@ oauth-openshift.apps.labor.lan.               IN     A 172.16.16.50
 _etcd-server-ssl._tcp.labor.lan.    86400     IN    SRV     0    10    2380    etcd-0
 _etcd-server-ssl._tcp.labor.lan.    86400     IN    SRV     0    10    2380    etcd-1
 _etcd-server-ssl._tcp.labor.lan.    86400     IN    SRV     0    10    2380    etcd-2
+

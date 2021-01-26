@@ -1,0 +1,30 @@
+apiVersion: v1
+baseDomain: labor.lan
+metadata:
+  name: lab
+
+compute:
+- hyperthreading: Enabled
+  name: worker
+  replicas: 0
+
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  replicas: 3
+
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14 
+    hostPrefix: 23 
+  networkType: OpenShiftSDN
+  serviceNetwork: 
+  - 172.30.0.0/16
+
+platform:
+  none: {}
+
+fips: false
+
+pullSecret: '{"auths":{"fake":{"auth": "bar"}}}' 
+sshKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQChOO3mo3nqvEsiymd7zbYpMIOD5IXtZRWlheMDn885pd6+exp0xJEBldx+O+nAYJ0ezZbqWX7HCpqd8AbLCWXanNvrTh/OR2DPiw4DHhr9vM4ryFBbooBUrQiaG9tEcAYrVUMFH1VW8a7oW2kD29JuTBFRS8Upr7xTumn/1DWErO9/7jU0YBLm4ZGB/gwsyxWy08AYiT6iluHbfssVLrkd7IPS5rZp/tHjCYqVEicSj69S8ZFqd8nK/bNyousmN8/9D0hW9T2SjsKIJ0c8BLdA3+eiytFDTwCWT4001UgUJx1g/d4Kgxsb/kpNRJu3nlRSMaevCkzI7jW3VFQ/ib7sED3l21zydECiwUKt2ztwZ2jnJ1iMshYSUBtczEtaJeQ5Shs6lD1vM1qez5hAPAP/1+lhvqZbVl3QHBb0n5rxjX23I4zkK6Np54X2R+w7vdPC6hHGyPb3XYsXgJ0J56X/gkCbsjFeClTTl2tihQSSLDekonnF51AdpeUGywFO+Us= vagrant@okd4-services.labor.lan'   
