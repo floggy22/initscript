@@ -15,4 +15,4 @@ git clone https://github.com/floggy22/initscript.git
 
 echo "Add dns"
 cd ~
-bash initscript/clientdns/add_dns_centos.sh
+bash initscript/clientdns/add_dns_centos_en.sh
