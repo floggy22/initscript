@@ -30,3 +30,4 @@ _etcd-server-ssl._tcp.lab.labor.lan.    86400     IN    SRV     0    10    2380 
 08:00:27:15:e1:e7	172.16.16.43	okd4-master3		 
 08:00:27:36:5b:fd	172.16.16.44	okd4-worker1		 
 08:00:27:37:77:49	172.16.16.45	okd4-worker2
+08:00:27:40:74:a7	172.16.16.50	okd4-services
