@@ -1,3 +1,6 @@
+https://medium.com/swlh/guide-okd-4-5-single-node-cluster-832693cb752b  
+https://itnext.io/guide-installing-an-okd-4-5-cluster-508a2631cbee
+
 ;Openshift Server
 okd4-bootstrap.lab.labor.lan.   IN A 172.16.16.40
 okd4-master1.lab.labor.lan.     IN A 172.16.16.41
@@ -31,6 +34,17 @@ _etcd-server-ssl._tcp.lab.labor.lan.    86400     IN    SRV     0    10    2380 
 08:00:27:36:5b:fd	172.16.16.44	okd4-worker1		 
 08:00:27:37:77:49	172.16.16.45	okd4-worker2
 08:00:27:40:74:a7	172.16.16.50	okd4-services
+
+
+08:00:27:8d:3e:fd	192.168.56.140	okd4-bootstrap		 
+08:00:27:9a:c7:b9	192.168.56.140	okd4-bootstrap		 
+08:00:27:67:d3:98	192.168.56.141	okd4-master1		 
+08:00:27:7c:b1:57	192.168.56.142	okd4-master2		 
+08:00:27:15:e1:e7	192.168.56.143	okd4-master3		 
+08:00:27:36:5b:fd	192.168.56.144	okd4-worker1		 
+08:00:27:37:77:49	192.168.56.145	okd4-worker2		 
+
+
 
 
 
