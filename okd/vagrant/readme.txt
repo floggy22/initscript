@@ -90,7 +90,7 @@ label worker
   in iso dir
   mkisofs -o fcos.iso -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -V "FCOSISO" -boot-load-size 4 -boot-info-table -R -J -v -T .
 
-this on:
+this one:
 mkisofs -U -A fcos32m -V fcos32m -volset fcos-32m -J -joliet-long -r -v -T -x ./lost+found -o fcos32m.iso -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot .
 
 
