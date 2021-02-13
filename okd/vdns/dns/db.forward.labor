@@ -19,17 +19,17 @@ okd4-master2.lab.labor.lan.     IN A 192.168.8.142
 okd4-master3.lab.labor.lan.     IN A 192.168.8.143
 okd4-worker1.lab.labor.lan.     IN A 192.168.8.144
 okd4-worker2.lab.labor.lan.     IN A 192.168.8.145
-okd4-services.labor.lan.        IN A 192.168.8.1
+okd4-services.labor.lan.        IN A 192.168.8.5
 
 ;Openshift internal stuff
-api.lab.labor.lan.       IN    A    192.168.8.1
-api-int.lab.labor.lan.   IN    A    192.168.8.1
-*.apps.lab.labor.lan.    IN    A    192.168.8.1
+api.lab.labor.lan.       IN    A    192.168.8.5
+api-int.lab.labor.lan.   IN    A    192.168.8.5
+*.apps.lab.labor.lan.    IN    A    192.168.8.5
 etcd-0.lab.labor.lan.    IN    A    192.168.8.141
 etcd-1.lab.labor.lan.    IN    A    192.168.8.142
 etcd-2.lab.labor.lan.    IN    A    192.168.8.143
-console-openshift-console.apps.lab.labor.lan.     IN     A 192.168.8.1
-oauth-openshift.apps.lab.labor.lan.               IN     A 192.168.8.1
+console-openshift-console.apps.lab.labor.lan.     IN     A 192.168.8.5
+oauth-openshift.apps.lab.labor.lan.               IN     A 192.168.8.5
 
 ;Openshift internal srv
 _etcd-server-ssl._tcp.lab.labor.lan.    86400     IN    SRV     0    10    2380    etcd-0.lab.

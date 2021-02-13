@@ -20,7 +20,7 @@ server IN A 192.168.8.5
 143 IN PTR okd4-master3.lab.labor.lan.
 144 IN PTR okd4-worker1.lab.labor.lan.
 145 IN PTR okd4-worker2.lab.labor.lan. 
-1 IN PTR okd4-services.lab.labor.lan.
-1 IN PTR api.lab.labor.lan.
-1 IN PTR api-int.lab.labor.lan.
-1 IN PTR apps.lab.labor.lan.
+5 IN PTR okd4-services.lab.labor.lan.
+5 IN PTR api.lab.labor.lan.
+5 IN PTR api-int.lab.labor.lan.
+5 IN PTR apps.lab.labor.lan.
