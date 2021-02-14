@@ -34,3 +34,6 @@ sudo rm /etc/netplan/50-vagrant.yaml
 sudo netplan apply
 
 echo "EDIT /etc/hosts manual!!"
+
+echo "[TASK 5] NFS"
+bash /root/initscript/okd/vdns/okd/nfsserver.sh
