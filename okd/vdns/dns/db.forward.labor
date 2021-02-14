@@ -10,7 +10,7 @@ $TTL 86400
 @ IN NS server.labor.lan.
 @ IN A 192.168.8.5
 
-server IN A 192.168.8.5
+server.labor.lan. IN A 192.168.8.5
 
 ;Openshift Server
 okd4-bootstrap.lab.labor.lan.   IN A 192.168.8.140

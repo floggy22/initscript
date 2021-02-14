@@ -10,7 +10,7 @@ options {
 	// Uncomment the following block, and insert the addresses replacing 
 	// the all-0's placeholder.
 
-	forwarders { 192.168.8.1;8.8.8.8; };
+	forwarders { 192.168.2.1; 8.8.8.8; };
 
 	//========================================================================
 	// If BIND logs error messages about the root key being expired,

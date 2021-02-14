@@ -8,7 +8,7 @@ $TTL 86400
 )
 
 @ IN NS server.labor.lan.
-server IN A 192.168.8.5
+server.labor.lan. IN A 192.168.8.5
 
 @ IN PTR labor.lan.
 5 IN PTR server.labor.lan.
