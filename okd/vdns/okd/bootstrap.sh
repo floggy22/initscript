@@ -25,3 +25,12 @@ mv /etc/dhcp/dhcp.conf /etc/dhcp/dhcp.conf.org
 cp /root/initscript/okd/vdns/okd/dhcpd.conf /etc/dhcp/dhcpd.conf
 systemctl restart isc-dhcp-server
 systemctl status isc-dhcp-server
+
+echo "[TASK 4] NameServer"
+echo "Add DNS settings - ROOT"
+
+sudo cat /etc/netplan/50-vagrant.yaml /root/initscript/okd/vdns/okd/netplan.yaml >> /etc/netplan/60-myconfig.yaml
+sudo rm /etc/netplan/50-vagrant.yaml
+sudo netplan apply
+
+echo "EDIT /etc/hosts manual!!"
