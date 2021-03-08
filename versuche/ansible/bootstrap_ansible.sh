@@ -11,6 +11,12 @@ ssh-keyscan -H node1 >> ~/.ssh/known_hosts
 ssh-keyscan -H node2 >> ~/.ssh/known_hosts
 ssh-keyscan -H node3 >> ~/.ssh/known_hosts
 ssh-keyscan -H node4 >> ~/.ssh/known_hosts
+ssh-keyscan -H ansible.labor.lan >> ~/.ssh/known_hosts
+ssh-keyscan -H node1.labor.lan >> ~/.ssh/known_hosts
+ssh-keyscan -H node2.labor.lan >> ~/.ssh/known_hosts
+ssh-keyscan -H node3.labor.lan >> ~/.ssh/known_hosts
+ssh-keyscan -H node4.labor.lan >> ~/.ssh/known_hosts
+
 sshpass -f /vagrant/password.txt ssh-copy-id root@ansible
 sshpass -f /vagrant/password.txt ssh-copy-id root@node1
 sshpass -f /vagrant/password.txt ssh-copy-id root@node2
