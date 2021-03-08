@@ -23,6 +23,7 @@ sshpass -f /vagrant/password.txt ssh-copy-id root@node2
 sshpass -f /vagrant/password.txt ssh-copy-id root@node3
 sshpass -f /vagrant/password.txt ssh-copy-id root@node4
 
-echo "[TASK A3] Install PIP"
+echo "[TASK A3] Install Ansible"
 apt install -y python3-pip
 pip3 install ansible
+#ansible-galaxy install viasite-ansible.zsh --force
