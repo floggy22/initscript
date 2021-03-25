@@ -42,19 +42,21 @@ echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/a
 
 echo "[TASK 6] Update"
 apt update
-#apt upgrade -y
+apt upgrade -y
 
 echo "[TASK 7] Telegraf"
-apt-get install telegraf
+apt-get install -y telegraf
 systemctl start telegraf
 
 echo "[TASK 8] Influx"
-apt-get install influxdb
+apt-get install -y influxdb
 systemctl unmask influxdb.service
 systemctl start influxdb
 
 echo "[TASK 9] Grafana"
-apt-get install grafana
+apt-get install -y grafana
 systemctl daemon-reload
 systemctl start grafana-server
 systemctl status grafana-server
+systemctl status influxdb
+systemctl status telegraf
