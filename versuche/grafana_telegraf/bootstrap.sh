@@ -28,5 +28,33 @@ git clone https://github.com/floggy22/initscript.git
 echo "[TASK A1] Make ssh key"
 ssh-keygen -b 2048 -t rsa -q -N "" -f ~/.ssh/id_rsa
 
-#echo "[TASK 5] Update"
-#apt update
+echo "[TASK 5] Add Repo"
+curl -s https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+source /etc/lsb-release
+echo "deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+curl -sL https://repos.influxdata.com/influxdb.key | gpg --import
+
+apt-get install -y apt-transport-https
+apt-get install -y software-properties-common wget
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+
+
+echo "[TASK 6] Update"
+apt update
+#apt upgrade -y
+
+echo "[TASK 7] Telegraf"
+apt-get install telegraf
+systemctl start telegraf
+
+echo "[TASK 8] Influx"
+apt-get install influxdb
+systemctl unmask influxdb.service
+systemctl start influxdb
+
+echo "[TASK 9] Grafana"
+apt-get install grafana
+systemctl daemon-reload
+systemctl start grafana-server
+systemctl status grafana-server
