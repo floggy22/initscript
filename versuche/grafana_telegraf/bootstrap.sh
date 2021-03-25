@@ -24,5 +24,9 @@ echo "[TASK 4] Clone init repo"
 cd ~
 git clone https://github.com/floggy22/initscript.git
 
+
+echo "[TASK A1] Make ssh key"
+ssh-keygen -b 2048 -t rsa -q -N "" -f ~/.ssh/id_rsa
+
 #echo "[TASK 5] Update"
 #apt update
