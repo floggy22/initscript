@@ -15,6 +15,7 @@ class client:
         iThread.daemon = True
         iThread.start
 
+
         while True:
             data = self.clientSocket.recv(1024)
             if not data:
