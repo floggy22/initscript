@@ -52,3 +52,11 @@ echo "[TASK 10] kind install"
 curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64 
 chmod +x ./kind
 mv ./kind /usr/bin/kind
+
+
+echo "[TASK 11] kubectl"
+apt install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+apt update
+apt install -y kubectl
