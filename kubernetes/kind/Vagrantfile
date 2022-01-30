@@ -1,0 +1,25 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_NO_PARALLEL'] = 'yes'
+
+Vagrant.configure(2) do |config|
+
+  config.vm.provision "shell", path: "bootstrap.sh"
+
+  # Kubernetes Master Server
+  config.vm.define "kmaster" do |node|
+  
+    node.vm.box = "ubuntu/focal64"
+    node.vm.hostname = "kind.example.com"
+    node.vm.network "private_network", ip: "172.16.16.40"
+  
+    node.vm.provider "virtualbox" do |v|
+      v.name = "kmaster"
+      v.memory = 1024 * 8
+      v.cpus = 4
+    end
+    #node.vm.provision "shell", path: "bootstrap_kmaster.sh"
+  
+  end
+end
