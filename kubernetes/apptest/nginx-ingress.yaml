@@ -1,0 +1,20 @@
+# https://kubernetes.io/docs/concepts/services-networking/ingress/#the-ingress-resource
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: n1-nginx
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: demo2.localdev.me
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: n1-svc-nginx2
+            port:
+              number: 80
